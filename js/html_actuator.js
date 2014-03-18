@@ -20,6 +20,11 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
         }
       });
     });
+    window.dispatchEvent(new CustomEvent('render', {
+      detail: {
+        cells: grid.cells
+      }
+    }));
 
     self.updateScore(metadata.score);
     self.updateBestScore(metadata.bestScore);
