@@ -1,12 +1,12 @@
 var hash = window.location.hash,
     scriptUrl = hash.substring(1),
-    body = null,
+    head = null,
     script = null;
 
 if (scriptUrl.indexOf('http') === 0 ||
     scriptUrl.indexOf('file') === 0) {
-  body = document.querySelector('body'),
+  head = document.querySelector('head'),
   script = document.createElement('script');
   script.src = scriptUrl;
-  body.appendChild(script);
+  head.appendChild(script);
 }
